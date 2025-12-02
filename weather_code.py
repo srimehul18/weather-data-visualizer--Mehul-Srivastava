@@ -29,7 +29,6 @@ def clean_data(df):
     df["date"] = pd.to_datetime(df["date"], errors="coerce")
     df = df.dropna(subset=["date"])
 
-    # ✅ KEEP rainfall here
     df = df[["date", "temp", "humidity", "wind", "pressure", "rainfall"]]
 
     df = df.dropna()
@@ -46,13 +45,10 @@ def clean_data(df):
     # Convert date column to datetime
     df["date"] = pd.to_datetime(df["date"])
 
-    # Keep only relevant columns for this assignment
     df = df[["date", "temp", "humidity"]]
 
-    # Drop rows where temp or humidity is missing
     df = df.dropna(subset=["temp", "humidity"])
 
-    # Sort by date just to be safe
     df = df.sort_values("date")
 
     print("\n=== Cleaned Data Head ===")
@@ -87,7 +83,6 @@ def compute_statistics(df: pd.DataFrame):
     print("\n=== Monthly Statistics (mean, min, max, std) ===")
     print(monthly_stats)
 
-    # Yearly statistics using NumPy explicitly
     temps = df["temp"].values
     hums = df["humidity"].values
 
