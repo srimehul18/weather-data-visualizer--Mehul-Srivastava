@@ -47,8 +47,9 @@ weather-data-visualizer/
 │ ├── humidity_temp_scatter.png
 
 │ └── combined_plots.png
+
 │
-└── weather_analysis.py\
+└── weather_code.py\
 
 
 ---
@@ -76,7 +77,7 @@ Open terminal in the project directory
 Run the Python script:
 ```bash
 
-python weather_analysis.py
+python weather_code.py
 ```
 
 
